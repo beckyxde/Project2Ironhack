@@ -1,0 +1,55 @@
+.flex-container {
+background-color: #bbb;
+justify-content: center;
+flex-direction: column;
+padding: 30px;
+margin: 30px;
+list-style: none;
+border: 1px solid silver;
+-ms-box-orient: horizontal;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -moz-flex;
+display: -webkit-flex;
+display: flex;
+}
+
+.filter {
+  margin: 0px 60px -30px 60px !important;
+  height: 60px !important;
+  justify-content: flex-end !important;
+}
+
+.filter input {
+  margin: auto 60px !important;
+  flex: 1;
+}
+
+.flex-box li, .filter { 
+  justify-content: center;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  background: #000;
+  border: 1px solid silver;
+  padding: 5px;
+  height: 100px;
+  margin: 60px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#resultsList {
+  padding-inline-start: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li:hover:not(.noResult) { 
+  background-color: yellow;
+}
