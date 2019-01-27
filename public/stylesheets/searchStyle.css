@@ -1,3 +1,15 @@
+* {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+li:hover:not(.noResult):not(.nav) { 
+  background-color: yellow;
+}
+
 .flex-container {
 background-color: #bbb;
 justify-content: center;
@@ -22,15 +34,14 @@ display: flex;
 }
 
 .filter input {
-  margin: auto 60px !important;
+  margin: auto !important;
   flex: 1;
 }
 
-.flex-box li, .filter { 
+.flex-box li, .filter{ 
   justify-content: center;
   -webkit-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  list-style-type: none;
   background: #000;
   border: 1px solid silver;
   padding: 5px;
@@ -42,14 +53,12 @@ display: flex;
   text-align: center;
 }
 
-#resultsList {
+.navbar{
+  float: right;
+  line-height: 0px;
+}
+
+/* removes indent from list elements. for some reason needs to have an id*/
+#resultsList, #sub {
   padding-inline-start: 0px;
-}
-
-a {
-  text-decoration: none;
-}
-
-li:hover:not(.noResult) { 
-  background-color: yellow;
 }
