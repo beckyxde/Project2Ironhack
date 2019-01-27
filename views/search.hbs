@@ -15,9 +15,23 @@
 
 <body class="flex-container">
 
+  <header>
+    <h1 role="banner"><span class="o">easy</span>tune</h1>
+  </header>
+
   <div class="filter">
     <input type="text" placeholder="filter results"></input>
     <button type="submit">🔎</button>
+    <nav role="navigation" class="navbar">
+      <ul id="sub">
+        <li class="nav">
+          <form action="../profile"> <input type="submit" value="Profile"></form>
+        </li>
+        <li class="nav">
+          <form action="../signup"><input type="submit" value="Logout"></form>
+        </li>
+      </ul>
+    </nav>
   </div>
 
   <ul id="resultsList" class="flex-box">
@@ -33,8 +47,10 @@
     <a href="#">
       <li>Three Event</li>
     </a>
-    <li class="noResult">Berlin sleeps - we've found no {{{genre}}} events</li>
-
+    <li class="noResult">Berlin sleeps - we've found no {{{genre}}} events
+      <br>
+      <form action="/"><input type="submit" value="Get Me Home!"></form>
+    </li>
   </ul>
 
   <script src="/javascripts/script.js"></script>
