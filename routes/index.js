@@ -1,10 +1,17 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
-/* GET home page */
+// /user
 router.get('/', (req, res, next) => {
   //req.user <-- current user  
   res.render('homepage');
+});
+
+
+// /user/profile
+router.get('/search', (req, res, next) => {
+  //req.user <-- current user  
+  res.render('search');
 });
 
 module.exports = router;
