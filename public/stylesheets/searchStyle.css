@@ -7,7 +7,7 @@ a {
 }
 
 li:hover:not(.noResult):not(.nav) { 
-  background-color: yellow;
+  background-color: rgba(113, 253, 100, 0.664); 
 }
 
 .flex-container {
@@ -28,20 +28,33 @@ display: flex;
 }
 
 .filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   margin: 0px 60px -30px 60px !important;
   height: 60px !important;
   justify-content: flex-end !important;
 }
 
 .filter input {
-  margin: auto !important;
+  margin: auto 20px !important;
   flex: 1;
+}
+
+.filter button {
+  margin: auto !important;
+  height: 30px;
+  width: 30px;
+}
+
+.filter .navbar{
+  line-height: 0px;
 }
 
 .flex-box li, .filter{ 
   justify-content: center;
   -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   background: #000;
   border: 1px solid silver;
   padding: 5px;
@@ -53,10 +66,6 @@ display: flex;
   text-align: center;
 }
 
-.navbar{
-  float: right;
-  line-height: 0px;
-}
 
 /* removes indent from list elements. for some reason needs to have an id*/
 #resultsList, #sub {
