@@ -1,51 +1,75 @@
-<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>easytune</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/signup.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
 
-<h2>Sign Up</h2>
 
-<form action="/signup" method="POST" id="form-container">
-  <label for="name">Name</label>
-  <input id="name" type="text" name="name" placeholder="JonSnow">
-  <br><br>
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
-  <br><br>
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br><br>
+<div id="navBar" class="flex-container">
 
-  <div>
-    <input type="submit" value="Signup">
-  </div>
+  <h1 class="flex-box">easytune</h1>
 
-  {{#if message}}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
-
-  <p class="account-message">
-    Do you already have an account?
+  <p class="account-message flex-box">
+    Already have an account? Login!
   </p>
-</form>
 
-<h2>Login</h2>
+  <h3class="flex-box"> {{!-- for some reason taking this out screws up formatting below :/--}}
 
-<form action="/login" method="POST" id="form-container2">
-  <label for="username">Username</label>
-  <input id="username2" type="text" name="username" placeholder="JonSnow">
-  <br><br>
-  <label for="password">Password</label>
-  <input id="password2" type="password" name="password" placeholder="Your password">
-  <br><br>
 
-  <div>
-    <input type="submit" value="Login">
-  </div>
+    <form action="/login" method="POST" id="form-container2">
+      <div class="flex-box">
+        <label for="username">Username</label>
+        <input id="username2" type="text" name="username" placeholder="JonSnow">
+      </div>
+      <br><br>
+      <div class="flex-box">
+        <label for="password">Password</label>
+        <input id="password2" type="password" name="password" placeholder="Your password">
+      </div>
+      <br><br>
 
-  {{#if message}}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
-  <br><br>
+      <div class="flex-box">
+        <input type="submit" value="Login">
+      </div>
 
-</form>
+      {{#if message}}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <br><br>
+
+    </form>
+</div>
+
+<div class="flex-container2">
+  <h2>Sign Up</h2>
+
+  <form action="/signup" method="POST" id="form-container">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" placeholder="JonSnow">
+    <br><br>
+    <label for="username">Username</label>
+    <input id="username" type="text" name="username" placeholder="JonSnow">
+    <br><br>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" placeholder="Your password">
+    <br><br>
+
+    <div>
+      <input type="submit" value="Signup">
+    </div>
+
+    {{#if message}}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+  </form>
+
+</div>
+
+</html>

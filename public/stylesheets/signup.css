@@ -1,0 +1,32 @@
+* {
+  background-color: #bbb;
+}
+
+.flex-container {
+  background: rgba(113, 253, 100, 0.664); /*for some reason only between flex elements*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.flex-box {
+  display: inline-flex;
+  margin: 0px;
+  padding: 10px 10px 10px 0px;
+}
+
+.flex-container form {
+display: inline-flex;
+}
+
+.flex-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0px 100px;
+}
+
+.flex-container2 h2 {
+  margin-inline-end: inherit;
+}
