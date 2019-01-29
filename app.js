@@ -9,6 +9,21 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 
+//API configuration
+
+const TicketmasterApi = require("ticketmaster");
+
+// Credentials
+const clientId = "boIcIcsSdL2nZNv2REinhtAMqJaOELBH",
+  clientSecret = "dVjaY7AGF87B4pss";
+
+TicketmasterApi("boIcIcsSdL2nZNv2REinhtAMqJaOELBH")
+  .discovery.v2.event.all()
+  .then(function(result) {
+    console.log(result.items[0].classifications[0].genre.name);
+    // "result" is an object of Ticketmaster events information
+  });
+
 //authorization
 const session = require("express-session");
 const bcrypt = require("bcrypt");
