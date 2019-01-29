@@ -2,23 +2,24 @@ body {
   background: #000;
 }
 
-header, footer {
+header,
+footer {
   display: block;
   margin: 3px;
   padding: 5px;
   min-height: 100px;
   color: #222;
   background: #e6e7e8;
-  }
+}
 
 header nav[role="navigation"] ul {
-  background: rgba(113, 253, 100, 0.664); 
-  width:100%;
+  background: rgba(113, 253, 100, 0.664);
+  width: 100%;
   height: 2em;
   text-align: right;
-  padding: 10px 0px 5px 10px; 
+  padding: 10px 0px 5px 10px;
   color: #111;
- }
+}
 
 section[role="main"] {
   width: 100%;
@@ -27,77 +28,76 @@ section[role="main"] {
 }
 
 /* generes */
-.drum {
-  background-image: url('../images/DNB.png');
+.Drum {
+  background-image: url("../images/DNB.png");
   background-size: cover;
   height: 150px;
 }
 
-.jazz {
-  background-image: url('../images/Jazz.jpg');
+.Jazz {
+  background-image: url("../images/Jazz.jpg");
   background-size: cover;
   height: 150px;
 }
 
-.metal {
-  background-image: url('../images/Metal.jpg');
+.Metal {
+  background-image: url("../images/Metal.jpg");
   background-size: cover;
   height: 150px;
 }
 
 .Acoustic {
-  background-image: url('../images/Acoustic.png');
+  background-image: url("../images/Acoustic.jpeg");
   background-size: cover;
   height: 150px;
 }
 
-.Latin{
-  background-image: url('../images/Latin.jpg');
+.Latin {
+  background-image: url("../images/Latin.jpg");
   background-size: cover;
   height: 150px;
 }
 
 .Punk {
-  background-image: url('../images/Punk.jpg');
+  background-image: url("../images/Punk.jpg");
   background-size: cover;
   height: 150px;
 }
 
-.eighties {
-  background-image: url('../images/80s.jpg');
+.Eighties {
+  background-image: url("../images/80s.png");
   background-size: cover;
   height: 150px;
 }
 
-.hiphop {
-  background-image: url('../images/HipHop.png');
+.Hiphop {
+  background-image: url("../images/HipHop.png");
   background-size: cover;
   height: 150px;
 }
 
-.dub {
-  background-image: url('../images/DubnReggae.jpg');
+.Dub {
+  background-image: url("../images/Roots.jpg");
   background-size: cover;
   height: 150px;
 }
 
-.classical {
-  background-image: url('../images/Classical.png');
+.Classical {
+  background-image: url("../images/Classical.png");
   background-size: cover;
   height: 150px;
 }
 .Grunge {
-  background-image: url('../images/Grunge.jpg');
+  background-image: url("../images/grunge1.jpg");
   background-size: cover;
   height: 150px;
 }
-.folk{
-  background-image: url('../images/Folk.jpg');
+.Folk {
+  background-image: url("../images/Folk.jpg");
   background-size: cover;
   height: 150px;
 }
 /* end of generes */
-
 
 .row {
   width: 95%;
@@ -137,11 +137,8 @@ section[role="main"] {
   margin: 2% 1% 2% 1%;
 }
 
-@media (max-width: 100px)  {
-  
-.block {
-  width: 100%;
+@media (max-width: 100px) {
+  .block {
+    width: 100%;
+  }
 }
-}
-
-
