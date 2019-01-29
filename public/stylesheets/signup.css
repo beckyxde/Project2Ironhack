@@ -1,19 +1,20 @@
 body {
-  background-color: #bbb;
+  background-color: #ddd;
 }
 
 .flex-container {
-  background: rgba(113, 253, 100, 0.664); /*for some reason only between flex elements*/
+  background: rgba(113, 253, 100, 0.664);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-flow: row wrap;
+  box-shadow: 3px 3px 10px grey;
 }
 
 .flex-box {
   display: inline-flex;
   margin: 0px;
-  padding: 10px 10px 10px 0px;
+  padding: 10px;
 }
 
 .flex-container form {
@@ -24,9 +25,15 @@ display: inline-flex;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin: 0px 100px;
+  margin: 50px 100px;
 }
 
 .flex-container2 h2 {
   margin-inline-end: inherit;
+}
+
+#form-container2 {
+  background: rgba(113, 253, 100, 0.664);
+  padding: 20px;
+  box-shadow: 3px 3px 10px grey;
 }
