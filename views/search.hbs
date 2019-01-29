@@ -1,59 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="/stylesheets/searchStyle.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{search}}</title>
-  {{!--
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../node_modules/reset-css/reset.css" /> --}}
-  <link rel="stylesheet" href="/stylesheets/searchStyle.css" />
-</head>
+<header>
+  <h1 role="banner"><span class="o">easy</span>tune</h1>
+</header>
 
-<body class="flex-container">
+<div class="filter">
+  <input type="text" placeholder="filter results"></input>
+  <button type="submit">🔎</button>
+  <nav role="navigation" class="navbar">
+    <ul id="sub">
+      <li class="nav">
+        <form action="../profile"> <input type="submit" value="Profile"></form>
+      </li>
+      <li class="nav">
+        <form action="../signup"><input type="submit" value="Logout"></form>
+      </li>
+    </ul>
+  </nav>
+</div>
 
-  <header>
-    <h1 role="banner"><span class="o">easy</span>tune</h1>
-  </header>
+<ul id="resultsList" class="flex-box">
+  {{!-- {{#each event}}
+  <li>{{#this}}</li>
+  {{#else}} --}}
+  <a href="#">
+    <li>One Event</li>
+  </a>
+  <a href="#">
+    <li>Two Event</li>
+  </a>
+  <a href="#">
+    <li>Three Event</li>
+  </a>
+  <li class="noResult">Berlin sleeps - we've found no {{{genre}}} events
+    <br>
+    <a href="/"><input type="submit" value="Get Me Home!"></a>
+  </li>
+</ul>
 
-  <div class="filter">
-    <input type="text" placeholder="filter results"></input>
-    <button type="submit">🔎</button>
-    <nav role="navigation" class="navbar">
-      <ul id="sub">
-        <li class="nav">
-          <form action="../profile"> <input type="submit" value="Profile"></form>
-        </li>
-        <li class="nav">
-          <form action="../signup"><input type="submit" value="Logout"></form>
-        </li>
-      </ul>
-    </nav>
-  </div>
-
-  <ul id="resultsList" class="flex-box">
-    {{!-- {{#each event}}
-    <li>{{#this}}</li>
-    {{#else}} --}}
-    <a href="#">
-      <li>One Event</li>
-    </a>
-    <a href="#">
-      <li>Two Event</li>
-    </a>
-    <a href="#">
-      <li>Three Event</li>
-    </a>
-    <li class="noResult">Berlin sleeps - we've found no {{{genre}}} events
-      <br>
-      <form action="/"><input type="submit" value="Get Me Home!"></form>
-    </li>
-  </ul>
-
-  <script src="/javascripts/script.js"></script>
-</body>
-
-</html>
+<script src="/javascripts/script.js"></script>

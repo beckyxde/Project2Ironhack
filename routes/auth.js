@@ -1,5 +1,5 @@
 const express = require('express');
-const authRoutes  = express.Router();
+const authRoutes = express.Router();
 
 const passport = require("passport")
 
@@ -31,35 +31,35 @@ authRoutes.post("/signup", (req, res, next) => {
   }
 
   User.findOne({ username })
-  .then(user => {
-    if (user !== null) {
-      res.render("auth/signup", { message: "The username already exists" });
-      return;
-    }
-
-    const salt = bcrypt.genSaltSync(bcryptSalt);
-    const hashPass = bcrypt.hashSync(password, salt);
-
-    const newUser = new User({
-      name,
-      username,
-      password: hashPass
-    });
-
-    newUser.save((err) => {
-      if (err) {
-        console.log(
-          "err", err
-        )
-        res.render("auth/signup", { message: "Something went wrong" });
-      } else {
-        res.redirect("/");
+    .then(user => {
+      if (user !== null) {
+        res.render("auth/signup", { message: "The username already exists" });
+        return;
       }
-    });
-  })
-  .catch(error => {
-    next(error)
-  })
+
+      const salt = bcrypt.genSaltSync(bcryptSalt);
+      const hashPass = bcrypt.hashSync(password, salt);
+
+      const newUser = new User({
+        name,
+        username,
+        password: hashPass
+      });
+
+      newUser.save((err) => {
+        if (err) {
+          console.log(
+            "err", err
+          )
+          res.render("auth/signup", { message: "Something went wrong" });
+        } else {
+          res.redirect("/");
+        }
+      });
+    })
+    .catch(error => {
+      next(error)
+    })
 });
 
 //logout
