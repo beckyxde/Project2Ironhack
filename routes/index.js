@@ -13,33 +13,31 @@ router.get("/", (req, res, next) => {
 router.get("/profile", (req, res, next) => {
   //req.user <-- current user
   res.render("profile");
-
-router.get('/search', (req, res, next) => {
-  //req.user <-- current user  
-  res.render('search', TicketmasterApi);
 });
 
-
-
+router.get("/search", (req, res, next) => {
+  //req.user <-- current user
+  res.render("search", TicketmasterApi);
+});
 
 // index.js
 
 let errDiv;
 
 const TicketmasterApi = axios.create({
-  baseURL: 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH&city=NewOrleans&classificationName=indie'
+  baseURL:
+    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH&city=NewOrleans&classificationName=indie"
 });
 
 function getEventInfo(theName) {
-  TicketmasterApi.get(theName)
-    .then(responseFromAPI => {
-      removeErrDiv();
-      const events = {
-        name: responseFromAPI.events.name[0],
-        genre: responseFromAPI.events.classifications.genre.name[0]
-      };
-    });
-};
+  TicketmasterApi.get(theName).then(responseFromAPI => {
+    removeErrDiv();
+    const events = {
+      name: responseFromAPI.events.name[0],
+      genre: responseFromAPI.events.classifications.genre.name[0]
+    };
+  });
+}
 // const eventGenre = responseFromAPI.events.classifications.genre.name[0];
 // const eventName = responseFromAPI.events.name[0];
 
