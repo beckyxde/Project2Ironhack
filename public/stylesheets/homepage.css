@@ -17,6 +17,8 @@ header nav[role="navigation"] ul {
   width: 100%;
   height: 2em;
   text-align: right;
+  list-style-type: none;
+  list-style: none;
   padding: 10px 0px 5px 10px;
   color: #111;
 }
@@ -26,6 +28,24 @@ section[role="main"] {
   max-width: 900px;
   margin: 0 auto;
 }
+
+/* .hover {
+  background: gray;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+}
+
+div:hover > .hover {
+  opacity: 0.4;
+} */
+
+/* .main:hover:not(.noResult):not(.nav) {
+  background-color: rgba(113, 253, 100, 0.664);
+} */
 
 /* generes */
 .Drum {
