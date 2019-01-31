@@ -1,15 +1,19 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
 // /user
-router.get('/', (req, res, next) => {
-  //req.user <-- current user  
-  res.render('homepage');
+router.get("/", (req, res, next) => {
+  //req.user <-- current user
+  res.render("homepage");
 });
 
-
 // /user/profile
+
+router.get("/profile", (req, res, next) => {
+  //req.user <-- current user
+  res.render("profile");
+
 router.get('/search', (req, res, next) => {
   //req.user <-- current user  
   res.render('search', TicketmasterApi);
