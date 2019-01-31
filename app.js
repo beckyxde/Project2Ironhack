@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+// const axios = require("axios")
+
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
@@ -19,7 +21,7 @@ const clientId = "boIcIcsSdL2nZNv2REinhtAMqJaOELBH",
 
 TicketmasterApi("boIcIcsSdL2nZNv2REinhtAMqJaOELBH")
   .discovery.v2.event.all()
-  .then(function(result) {
+  .then(function (result) {
     console.log(result.items[0].classifications[0].genre.name);
     // "result" is an object of Ticketmaster events information
   });
@@ -53,6 +55,9 @@ const debug = require("debug")(
 );
 
 const app = express();
+//tells express where to look for views - to enable hbs
+app.set('views', __dirname + '/views');
+app.set('view engine', 'hbs');
 
 const User = require("./models/user");
 

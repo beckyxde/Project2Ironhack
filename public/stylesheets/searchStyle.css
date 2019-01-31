@@ -2,8 +2,13 @@
   list-style-type: none;
 }
 
+body {
+  background-color: #ddd;
+}
+
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+  line-height: normal !important;
 }
 
 li:hover:not(.noResult):not(.nav) { 
@@ -11,7 +16,6 @@ li:hover:not(.noResult):not(.nav) {
 }
 
 .flex-container {
-background-color: #bbb;
 justify-content: center;
 flex-direction: column;
 padding: 30px;
@@ -33,6 +37,7 @@ display: flex;
   justify-content: space-around;
   margin: 0px 60px -30px 60px !important;
   height: 60px !important;
+  line-height: normal !important;
   justify-content: flex-end !important;
 }
 
@@ -47,8 +52,13 @@ display: flex;
   width: 30px;
 }
 
-.filter .navbar{
-  line-height: 0px;
+.filter .navbar {
+  margin: auto;
+  padding: 0px;
+}
+
+.filter .navbar #logoutBtn {
+  padding: 2px 0 0 0;
 }
 
 .flex-box li, .filter{ 
