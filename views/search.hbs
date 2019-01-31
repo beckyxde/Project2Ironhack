@@ -20,9 +20,9 @@
 </div>
 
 <ul id="resultsList" class="flex-box">
-  {{!-- {{#each event}}
-  <li>{{#this}}</li>
-  {{#else}} --}}
+  {{#each events}}
+  <li>{{this.name}}</li>
+  {{/each}}
   <a href="#">
     <li>One Event</li>
   </a>
@@ -32,7 +32,7 @@
   <a href="#">
     <li>Three Event</li>
   </a>
-  <li class="noResult">Berlin sleeps - we've found no {{{genre}}} events
+  <li class="noResult">Berlin sleeps - we've found no {{genre}} events
     <br>
     <a href="/"><input type="submit" value="Get Me Home!"></a>
   </li>
