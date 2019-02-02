@@ -45,7 +45,7 @@ router.get("/search", (req, res, next) => {
       // document.getElementById("eventGenre").innerHTML = eventGenre;
       // document.getElementById("eventName").innerHTML = "Name: " + eventName;
     })
-    .then(eventData => {});
+    .then(eventData => { });
 });
 
 // index.js
@@ -123,19 +123,7 @@ function checkInput() {
 //   const events = document.getElementById("theInput").value;
 //   getEventInfo(events);
 // };
-=======
-    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH&city=NewOrleans&classificationName=indie"
-});
 
-function getEventInfo(theName) {
-  TicketmasterApi.get(theName).then(responseFromAPI => {
-    removeErrDiv();
-    const events = {
-      name: responseFromAPI.events.name[0],
-      genre: responseFromAPI.events.classifications.genre.name[0]
-    };
-  });
-}
 // const eventGenre = responseFromAPI.events.classifications.genre.name[0];
 // const eventName = responseFromAPI.events.name[0];
 
