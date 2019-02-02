@@ -4,10 +4,12 @@
   <nav role="navigation">
     <ul id="sub">
       <li>
-        <form action="../profile"> <input type="submit" value="Profile"></form>
+        <a href="/profile">Profile</a>
+        {{!-- <form action="../profile"> <input type="submit" value="Profile"></form> --}}
       </li>
       <li>
-        <form action="../signup"><input type="submit" value="Logout"></form>
+        {{!-- <form action="../signup"><input type="submit" value="Logout"></form> --}}
+        <a href="/signup">Logout</a>
       </li>
     </ul>
   </nav>
@@ -16,46 +18,62 @@
 <section role="main">
   <div class="row">
     <div class="block Drum">
-      <h1>Drum and Bass</h1>
+      <a href="/search">
+        <h1>Drum and Bass</h1>
+      </a>
     </div>
     <div class="block Jazz">
-      <h1>Jazz</h1>
+      <a href="/search">
+        <h1>Jazz</h1>
+      </a>
     </div>
     <div class="block Metal">
-      <h1>Metal</h1>
+      <a href="/search">
+        <h1>Metal</h1>
+      </a>
     </div>
   </div>
   <div class="row">
     <div class="block Acoustic">
-      <h1>Acoustic</h1>
+      <a href="/search">
+        <h1>Acoustic</h1>
+      </a>
     </div>
-    <div class="block Latin">
-      <h1>Latin</h1>
+    <div class="block Latin"><a href="/search">
+        <h1>Latin</h1>
+      </a>
     </div>
-    <div class="block Punk">
-      <h1>Punk</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="block Eighties">
-      <h1>80s</h1>
-    </div>
-    <div class="block Hiphop">
-      <h1>HipHop</h1>
-    </div>
-    <div class="block Dub">
-      <h1>Dub and Reggae</h1>
+    <div class="block Punk"><a href="/search">
+        <h1>Punk</h1>
+      </a>
     </div>
   </div>
   <div class="row">
-    <div class="block Classical">
-      <h1>Classical</h1>
+    <div class="block Eighties"><a href="/search">
+        <h1>80s</h1>
+      </a>
     </div>
-    <div class="block Grunge">
-      <h1>Grunge</h1>
+    <div class="block Hiphop"><a href="/search">
+        <h1>HipHop</h1>
+      </a>
     </div>
-    <div class="block Folk">
-      <h1>Folk</h1>
+    <div class="block Dub"><a href="/search">
+        <h1>Dub and Reggae</h1>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="block Classical"><a href="/search">
+        <h1>Classical</h1>
+      </a>
+    </div>
+    <div class="block Grunge"><a href="/search">
+        <h1>Grunge</h1>
+      </a>
+    </div>
+    <div class="block Folk"><a href="/search">
+        <h1>Folk</h1>
+      </a>
     </div>
   </div>
 

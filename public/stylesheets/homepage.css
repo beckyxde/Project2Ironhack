@@ -52,6 +52,7 @@ div:hover > .hover {
   background-image: url("../images/DNB.png");
   background-size: cover;
   height: 150px;
+  color: white;
 }
 
 .Jazz {
@@ -135,6 +136,15 @@ div:hover > .hover {
   float: left;
   margin: 2% 1% 2% 0%;
   text-align: center;
+}
+
+a:link,
+a:visited {
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* .block {
