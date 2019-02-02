@@ -31,10 +31,12 @@ router.get("/profile", (req, res, next) => {
 router.get("/search", (req, res, next) => {
   //req.user <-- current user
   console.log("GENREEEE", req.query.genre);
-  TicketmasterApi.get()
+  axios.get("https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH")
     .then(responseFromAPI => {
-      responseFromAPI.data._embedded.events.map((event, i) =>
+      responseFromAPI.data._embedded.events.map((event, i) => {
+        console.log("here we are")
         console.log(i, event.classifications)
+      }
       );
       res.render("search", { events: responseFromAPI.data._embedded.events });
 
@@ -45,20 +47,14 @@ router.get("/search", (req, res, next) => {
       // document.getElementById("eventGenre").innerHTML = eventGenre;
       // document.getElementById("eventName").innerHTML = "Name: " + eventName;
     })
-    .then(eventData => { });
 });
 
 // index.js
 
 let errDiv;
 
-const TicketmasterApi = axios.create({
-  baseURL:
-    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH"
-});
-
 function getEventInfo(theName) {
-  TicketmasterApi.get()
+  axios.get("https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH")
     .then(responseFromAPI => {
       responseFromAPI.data._embedded.events.map((event, i) =>
         console.log(i, event.classifications)
