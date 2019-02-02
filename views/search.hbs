@@ -24,12 +24,12 @@
   <li>{{this.name}} :
     {{this.classifications.[0].genre.name}}
   </li>
-  {{/each}}
-
-  <li class="noResult">Berlin sleeps - we've found no {{genre}} events
+  {{else}}
+  <li class="noResult">Berlin sleeps - we've found no {{this.classifications.[0].genre.name}} events
     <br>
     <a href="/"><input type="submit" value="Get Me Home!"></a>
   </li>
+  {{/each}}
 </ul>
 
 <script src="/javascripts/script.js"></script>
