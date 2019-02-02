@@ -21,17 +21,11 @@
 
 <ul id="resultsList" class="flex-box">
   {{#each events}}
-  <li>{{this.name}}</li>
+  <li>{{this.name}} :
+    {{this.classifications.[0].genre.name}}
+  </li>
   {{/each}}
-  <a href="#">
-    <li>One Event</li>
-  </a>
-  <a href="#">
-    <li>Two Event</li>
-  </a>
-  <a href="#">
-    <li>Three Event</li>
-  </a>
+
   <li class="noResult">Berlin sleeps - we've found no {{genre}} events
     <br>
     <a href="/"><input type="submit" value="Get Me Home!"></a>

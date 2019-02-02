@@ -22,9 +22,29 @@ router.get("/profile", (req, res, next) => {
   res.render("profile");
 });
 
+// router.get("/search", (req, res, next) => {
+//   //req.user <-- current user
+//   res.render("search", TicketmasterApi);
+// });
+
 router.get("/search", (req, res, next) => {
   //req.user <-- current user
-  res.render("search", TicketmasterApi);
+  console.log("GENREEEE", req.query.genre);
+  TicketmasterApi.get()
+    .then(responseFromAPI => {
+      responseFromAPI.data._embedded.events.map((event, i) =>
+        console.log(i, event.classifications)
+      );
+      res.render("search", { events: responseFromAPI.data._embedded.events });
+
+      // removeErrDiv();
+      // const eventGenre = responseFromAPI.data[0];
+      // const eventName = responseFromAPI.data[0];
+
+      // document.getElementById("eventGenre").innerHTML = eventGenre;
+      // document.getElementById("eventName").innerHTML = "Name: " + eventName;
+    })
+    .then(eventData => {});
 });
 
 // index.js
@@ -33,18 +53,23 @@ let errDiv;
 
 const TicketmasterApi = axios.create({
   baseURL:
-    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH&city=NewOrleans&classificationName=indie"
+    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH"
 });
 
 function getEventInfo(theName) {
-  TicketmasterApi.get(theName)
+  TicketmasterApi.get()
     .then(responseFromAPI => {
-      removeErrDiv();
-      const eventGenre = responseFromAPI.data[0].name;
-      const eventName = responseFromAPI.data[0].capital;
+      responseFromAPI.data._embedded.events.map((event, i) =>
+        console.log(i, event.classifications)
+      );
 
-      document.getElementById("eventGenre").innerHTML = eventGenre;
-      document.getElementById("eventName").innerHTML = "Name: " + eventName;
+      return responseFromAPI.data._embedded.events;
+      // removeErrDiv();
+      // const eventGenre = responseFromAPI.data[0];
+      // const eventName = responseFromAPI.data[0];
+
+      // document.getElementById("eventGenre").innerHTML = eventGenre;
+      // document.getElementById("eventName").innerHTML = "Name: " + eventName;
     })
 
     .catch(err => {
