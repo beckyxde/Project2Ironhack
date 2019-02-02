@@ -16,13 +16,13 @@ const path = require("path");
 const TicketmasterApi = require("ticketmaster");
 
 // Credentials
-const clientId = "boIcIcsSdL2nZNv2REinhtAMqJaOELBH",
-  clientSecret = "dVjaY7AGF87B4pss";
 
-TicketmasterApi("boIcIcsSdL2nZNv2REinhtAMqJaOELBH")
+TicketmasterApi(process.env.clientId)
   .discovery.v2.event.all()
   .then(function (result) {
+
     console.log(result.items[0].classifications[0].genre.name);
+
     // "result" is an object of Ticketmaster events information
   });
 
@@ -37,7 +37,8 @@ const flash = require("connect-flash");
 //database
 mongoose
   .connect(
-    "mongodb://localhost/Project2Ironhack",
+    process.env.MONGODB_URI,
+    // "mongodb://localhost/Project2Ironhack",
     { useNewUrlParser: true }
   )
   .then(x => {
@@ -56,10 +57,10 @@ const debug = require("debug")(
 
 const app = express();
 //tells express where to look for views - to enable hbs
-app.set('views', __dirname + '/views');
-app.set('view engine', 'hbs');
+app.set("views", __dirname + "/views");
+app.set("view engine", "hbs");
 
-const User = require("./models/user");
+const User = require("./models/User");
 
 app.use(
   session({
