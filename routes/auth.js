@@ -1,24 +1,26 @@
-const express = require('express');
+const express = require("express");
 const authRoutes = express.Router();
 
-const passport = require("passport")
+const passport = require("passport");
 
-const User = require("../models/user")
+const User = require("../models/User");
 
-const bcrypt = require('bcrypt')
-const bcryptSalt = 10
+const bcrypt = require("bcrypt");
+const bcryptSalt = 10;
 
-authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/login",
-  failureFlash: true,
-  passReqToCallback: true
-}));
+authRoutes.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+    passReqToCallback: true
+  })
+);
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
-
 
 authRoutes.post("/signup", (req, res, next) => {
   const username = req.body.username;
@@ -46,11 +48,9 @@ authRoutes.post("/signup", (req, res, next) => {
         password: hashPass
       });
 
-      newUser.save((err) => {
+      newUser.save(err => {
         if (err) {
-          console.log(
-            "err", err
-          )
+          console.log("err", err);
           res.render("auth/signup", { message: "Something went wrong" });
         } else {
           res.redirect("/");
@@ -58,8 +58,8 @@ authRoutes.post("/signup", (req, res, next) => {
       });
     })
     .catch(error => {
-      next(error)
-    })
+      next(error);
+    });
 });
 
 //logout
