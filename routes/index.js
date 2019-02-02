@@ -15,13 +15,17 @@ router.get("/", (req, res, next) => {
   res.render("homepage");
 });
 
+// router.get("/?genre=rock", (req, res, next) => {
+//   //req.user <-- current user
+//   res.render("search?genre={{clas");
+// });
+
 // /user/profile
 
 router.get("/profile", (req, res, next) => {
   //req.user <-- current user
   res.render("profile");
 });
-
 
 // router.get("/search", (req, res, next) => {
 //   //req.user <-- current user
@@ -31,13 +35,19 @@ router.get("/profile", (req, res, next) => {
 router.get("/search", (req, res, next) => {
   //req.user <-- current user
   console.log("GENREEEE", req.query.genre);
-  axios.get("https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH")
+  axios
+    .get(
+      "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" +
+        process.env.clientId +
+        "&keyword=" +
+        req.query.genre +
+        " Berlin"
+    )
     .then(responseFromAPI => {
       responseFromAPI.data._embedded.events.map((event, i) => {
-        console.log("here we are")
-        console.log(i, event.classifications)
-      }
-      );
+        console.log("here we are");
+        console.log(i, event);
+      });
       res.render("search", { events: responseFromAPI.data._embedded.events });
 
       // removeErrDiv();
@@ -46,7 +56,7 @@ router.get("/search", (req, res, next) => {
 
       // document.getElementById("eventGenre").innerHTML = eventGenre;
       // document.getElementById("eventName").innerHTML = "Name: " + eventName;
-    })
+    });
 });
 
 // index.js
@@ -54,7 +64,10 @@ router.get("/search", (req, res, next) => {
 let errDiv;
 
 function getEventInfo(theName) {
-  axios.get("https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH")
+  axios
+    .get(
+      "https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH"
+    )
     .then(responseFromAPI => {
       responseFromAPI.data._embedded.events.map((event, i) =>
         console.log(i, event.classifications)
