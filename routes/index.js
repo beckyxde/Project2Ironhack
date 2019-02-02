@@ -3,12 +3,6 @@ const router = express.Router();
 const axios = require("axios");
 const document = "";
 
-// const getEventInfo = require("");
-// const events = {
-//   name: responseFromAPI.events.name[0],
-//   genre: responseFromAPI.events.classifications.genre.name[0]
-// };
-
 // /user
 router.get("/", (req, res, next) => {
   //req.user <-- current user
@@ -22,12 +16,6 @@ router.get("/profile", (req, res, next) => {
   res.render("profile");
 });
 
-
-// router.get("/search", (req, res, next) => {
-//   //req.user <-- current user
-//   res.render("search", TicketmasterApi);
-// });
-
 router.get("/search", (req, res, next) => {
   //req.user <-- current user
   console.log("GENREEEE", req.query.genre);
@@ -35,53 +23,16 @@ router.get("/search", (req, res, next) => {
     .then(responseFromAPI => {
       responseFromAPI.data._embedded.events.map((event, i) => {
         console.log("here we are")
-        console.log(i, event.classifications)
+        console.log(i, event.dates)
       }
       );
       res.render("search", { events: responseFromAPI.data._embedded.events });
-
-      // removeErrDiv();
-      // const eventGenre = responseFromAPI.data[0];
-      // const eventName = responseFromAPI.data[0];
-
-      // document.getElementById("eventGenre").innerHTML = eventGenre;
-      // document.getElementById("eventName").innerHTML = "Name: " + eventName;
     })
 });
 
 // index.js
 
 let errDiv;
-
-function getEventInfo(theName) {
-  axios.get("https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH")
-    .then(responseFromAPI => {
-      responseFromAPI.data._embedded.events.map((event, i) =>
-        console.log(i, event.classifications)
-      );
-
-      return responseFromAPI.data._embedded.events;
-      // removeErrDiv();
-      // const eventGenre = responseFromAPI.data[0];
-      // const eventName = responseFromAPI.data[0];
-
-      // document.getElementById("eventGenre").innerHTML = eventGenre;
-      // document.getElementById("eventName").innerHTML = "Name: " + eventName;
-    })
-
-    .catch(err => {
-      if (err.response.status === 404) {
-        removeEventInfo();
-        createDiv();
-        const theErr = document.createTextNode(
-          `What the heck is ${theName}? 🤭`
-        );
-        errDiv.appendChild(theErr);
-      } else {
-        console.log("err => ", err);
-      }
-    });
-}
 
 function createDiv() {
   errDiv = document.createElement("div");

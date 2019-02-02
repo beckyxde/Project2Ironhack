@@ -21,8 +21,9 @@
 
 <ul id="resultsList" class="flex-box">
   {{#each events}}
-  <li>{{this.name}} :
-    {{this.classifications.[0].genre.name}}
+  <li>{{this.name}} [ {{this.classifications.[0].genre.name}} ] <br>
+    where: {{this._embedded.venues.[0].name}} <br>
+    when: {{this.dates.start.localDate}}, {{this.dates.start.localTime}}
   </li>
   {{else}}
   <li class="noResult">Berlin sleeps - we've found no {{this.classifications.[0].genre.name}} events

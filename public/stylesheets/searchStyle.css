@@ -35,7 +35,7 @@ display: flex;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 0px 60px -30px 60px !important;
+  margin: 0px 60px 0px 60px !important;
   height: 60px !important;
   line-height: normal !important;
   justify-content: flex-end !important;
@@ -70,10 +70,9 @@ display: flex;
   padding: 5px;
   height: 100px;
   margin: 60px;
-  line-height: 50px;
+  line-height: 30px;
   color: white;
   font-weight: bold;
-  text-align: center;
 }
 
 
