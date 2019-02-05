@@ -19,45 +19,24 @@
   </nav>
 </div>
 
-<ul id="resultsList" class="container">
-  {{!-- {{#each events}}
-  <li>{{this.name}} :
-    {{this.classifications.[0].genre.name}}
-    <img src={{this.images.[0].url}} alt="some text" />
-  </li>
-  {{/each}} --}}
-
+<ul id="resultsList" class="flex-box">
   {{#each events}}
-  <div class="card mb-3">
-    <img class="card-img-top" src={{this.images.[0].url}} alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{this.name}}</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-        This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-
-  {{/each}}
-
-  <ul id="resultsList" class="flex-box">
-    {{#each events}}
-    <li>{{this.name}} [ {{this.classifications.[0].genre.name}} ] <br>
-      where: {{this._embedded.venues.[0].name}} <br>
-      when: {{this.dates.start.localDate}}, {{this.dates.start.localTime}}
-    </li>
-    {{else}}
-    <li class="noResult">Berlin sleeps - we've found no {{this.classifications.[0].genre.name}} events
-      <br>
-      <a href="/"><input type="submit" value="Get Me Home!"></a>
-    </li>
-    {{/each}}
-  </ul>
-
-  <li class="noResult">Berlin sleeps - we've found no {{genre}} events
+  <li>{{this.name}} [ {{this.classifications.[0].genre.name}} ] <br>
+    where: {{this._embedded.venues.[0].name}} <br>
+    when: {{this.dates.start.localDate}}, {{this.dates.start.localTime}}
+  </li>
+  {{else}}
+  <li class="noResult">Berlin sleeps - we've found no {{this.classifications.[0].genre.name}} events
     <br>
     <a href="/"><input type="submit" value="Get Me Home!"></a>
   </li>
+  {{/each}}
+</ul>
+
+<li class="noResult">Berlin sleeps - we've found no {{genre}} events
+  <br>
+  <a href="/"><input type="submit" value="Get Me Home!"></a>
+</li>
 </ul>
 
 <script src="/javascripts/script.js"></script>

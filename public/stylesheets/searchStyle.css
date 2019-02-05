@@ -11,24 +11,24 @@ a {
   line-height: normal !important;
 }
 
-li:hover:not(.noResult):not(.nav) { 
-  background-color: rgba(113, 253, 100, 0.664); 
+li:hover:not(.noResult):not(.nav) {
+  background-color: rgba(113, 253, 100, 0.664);
 }
 
 .flex-container {
-justify-content: center;
-flex-direction: column;
-padding: 30px;
-margin: 30px;
-list-style: none;
-border: 1px solid silver;
--ms-box-orient: horizontal;
-display: -webkit-box;
-display: -moz-box;
-display: -ms-flexbox;
-display: -moz-flex;
-display: -webkit-flex;
-display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  margin: 30px;
+  list-style: none;
+  border: 1px solid silver;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
 }
 
 .filter {
@@ -61,7 +61,8 @@ display: flex;
   padding: 2px 0 0 0;
 }
 
-.flex-box li, .filter{ 
+.flex-box li,
+.filter {
   justify-content: center;
   -webkit-flex-wrap: nowrap;
   flex-wrap: wrap;
@@ -76,8 +77,8 @@ display: flex;
   text-align: center;
 }
 
-
 /* removes indent from list elements. for some reason needs to have an id*/
-#resultsList, #sub {
+#resultsList,
+#sub {
   padding-inline-start: 0px;
 }
