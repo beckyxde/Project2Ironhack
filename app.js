@@ -19,7 +19,7 @@ const TicketmasterApi = require("ticketmaster");
 
 TicketmasterApi(process.env.clientId)
   .discovery.v2.event.all()
-  .then(function(result) {
+  .then(function (result) {
     console.log(result.items[0].classifications[0].genre.name);
 
     // "result" is an object of Ticketmaster events information
