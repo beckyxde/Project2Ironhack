@@ -12,7 +12,7 @@ authRoutes.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/login",
+    failureRedirect: "/signup",
     failureFlash: true,
     passReqToCallback: true
   })

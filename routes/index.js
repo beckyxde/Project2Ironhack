@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 const document = "";
+const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
 // /user
 router.get("/", (req, res, next) => {
@@ -16,13 +17,13 @@ router.get("/", (req, res, next) => {
 
 // /user/profile
 
-router.get("/profile", (req, res, next) => {
+router.get("/profile", ensureLoggedIn("/signup"), (req, res, next) => {
   //req.user <-- current user
   console.log("req useer", req.user)
   res.render("profile");
 });
 
-router.get("/search", (req, res, next) => {
+router.get("/search", ensureLoggedIn("/signup"), (req, res, next) => {
   //req.user <-- current user
   console.log("GENREEEE", req.query.genre);
   let requestString = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" +
