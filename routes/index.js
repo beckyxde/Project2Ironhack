@@ -18,24 +18,26 @@ router.get("/", (req, res, next) => {
 
 router.get("/profile", (req, res, next) => {
   //req.user <-- current user
+  console.log("req useer", req.user)
   res.render("profile");
 });
 
 router.get("/search", (req, res, next) => {
   //req.user <-- current user
   console.log("GENREEEE", req.query.genre);
+  let requestString = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" +
+    process.env.clientId +
+    "&keyword=" +
+    req.query.genre +
+    " Berlin"
+  console.log(requestString)
   axios
     .get(
-      "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" +
-        process.env.clientId +
-        "&keyword=" +
-        req.query.genre +
-        " Berlin"
+      requestString
     )
     .then(responseFromAPI => {
       responseFromAPI.data._embedded.events.map((event, i) => {
-        console.log("here we are")
-        console.log(i, event.dates)
+        console.log(i, event)
       }
       );
       res.render("search", { events: responseFromAPI.data._embedded.events });

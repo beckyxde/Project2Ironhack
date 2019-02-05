@@ -55,6 +55,8 @@ const debug = require("debug")(
 );
 
 const app = express();
+
+app.use(flash());
 //tells express where to look for views - to enable hbs
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
@@ -102,6 +104,14 @@ passport.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+  res.locals.isConnected = req.isAuthenticated();
+  res.locals.currentUser = req.user;
+  //res.locals.isAdmin = req.user && req.user.role === 'ADMIN'
+
+  next();
+})
 
 // Middleware Setup
 app.use(logger("dev"));
