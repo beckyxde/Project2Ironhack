@@ -110,7 +110,8 @@ section[role="main"] {
   padding: 300px;
   margin: 100px;
   list-style: none;
-  font: white;
+  color: white;
+  font-weight: bold;
   border: 1px solid silver;
   -ms-box-orient: horizontal;
   display: -webkit-box;
