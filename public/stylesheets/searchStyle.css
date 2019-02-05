@@ -67,7 +67,8 @@ display: flex;
   padding: 2px 0 0 0;
 }
 
-.flex-box li, .filter{ 
+.flex-box li,
+.filter {
   justify-content: center;
   -webkit-flex-wrap: nowrap;
   flex-wrap: wrap;
@@ -81,8 +82,8 @@ display: flex;
   font-weight: bold;
 }
 
-
 /* removes indent from list elements. for some reason needs to have an id*/
-#resultsList, #sub {
+#resultsList,
+#sub {
   padding-inline-start: 0px;
 }

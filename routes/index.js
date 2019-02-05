@@ -9,6 +9,11 @@ router.get("/", (req, res, next) => {
   res.render("homepage");
 });
 
+// router.get("/?genre=rock", (req, res, next) => {
+//   //req.user <-- current user
+//   res.render("search?genre={{clas");
+// });
+
 // /user/profile
 
 router.get("/profile", (req, res, next) => {
@@ -19,7 +24,14 @@ router.get("/profile", (req, res, next) => {
 router.get("/search", (req, res, next) => {
   //req.user <-- current user
   console.log("GENREEEE", req.query.genre);
-  axios.get("https://app.ticketmaster.com/discovery/v2/events.json?apikey=boIcIcsSdL2nZNv2REinhtAMqJaOELBH")
+  axios
+    .get(
+      "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" +
+        process.env.clientId +
+        "&keyword=" +
+        req.query.genre +
+        " Berlin"
+    )
     .then(responseFromAPI => {
       responseFromAPI.data._embedded.events.map((event, i) => {
         console.log("here we are")

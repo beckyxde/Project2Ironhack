@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<div lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/stylesheets/profile.css" />
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+  </head>
 
-<header>
-  <h1 role="banner"><span class="o">easy</span>tune</h1>
-  <nav role="navigation">
-    <ul id="sub">
-      <li>
-        <form action="../"> <input type="submit" value="Back to Homepage"></form>
-      </li>
-      <li>
-        <form action="../signup"><input type="submit" value="Logout"></form>
-      </li>
+  <header class="header">
+    <h1 role="banner"><span class="o"><a href="/">easytune</a></span></h1>
+    <ul class="nav">
+      <li><a href="/">Back to Homepage</a></li>
+      <li><a href="/signup">Logout</a></li>
     </ul>
-  </nav>
-</header>
+  </header>
 
-<head>
-  <div class="container">
+  <div class="flex-box">
+    <p>User's Profile</p>
+  </div>
 
-    <div class="top">
-      <p>"Person's Name"</p>
+  <div class="flex-container">
+    <div class="box">
     </div>
+    <ul id="starredEvents">
+      {{#each events}}
+      <li>{{this.name}} [ {{this.classifications.[0].genre.name}} ] <br>
+        where: {{this._embedded.venues.[0].name}} <br>
+        when: {{this.dates.start.localDate}}, {{this.dates.start.localTime}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
 
-    <div class="main">
-    </div>
+</div>
 
 </html>
+
+<script src="/javascripts/script.js"></script>

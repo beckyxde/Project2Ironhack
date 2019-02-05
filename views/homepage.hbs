@@ -1,31 +1,43 @@
 <link rel="stylesheet" href="/stylesheets/homepage.css" />
-<header>
-  <h1 role="banner"><span class="o">easy</span>tune</h1>
-  <nav role="navigation">
-    <ul id="sub">
-      <li>
-        <a href="/profile">Profile</a>
-        {{!-- <form action="../profile"> <input type="submit" value="Profile"></form> --}}
-      </li>
-      <li>
-        {{!-- <form action="../signup"><input type="submit" value="Logout"></form> --}}
-        <a href="/signup">Logout</a>
-      </li>
-    </ul>
-  </nav>
+
+{{!-- <header>
+  <div class="logo">
+    <h1 class="flex-box">easytune</h1>
+  </div>
+  <div class="navbar">
+    <nav role="navigation">
+      <ul id="sub">
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/signup">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header> --}}
+
+<header class="header">
+  <h1 role="banner"><span class="o">easytune</span></h1>
+  <ul class="nav">
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/signup">Logout</a></li>
+  </ul>
 </header>
 
 <section role="main">
   <div class="row">
     <div class="block Drum">
-      <a href="/search?genre=drum">
-        <h1>Drum and Bass</h1>
-      </a>
+      <div class="black">
+        <a href="/search?genre=drum">
+          <h1>Drum and Bass</h1>
+        </a>
+      </div>
     </div>
     <div class="block Jazz">
-      <a href="/search?genre=jazz">
-        <h1>Jazz</h1>
-      </a>
+      <div class="black">
+        <a href="/search?genre=jazz">
+          <h1>Jazz</h1>
+        </a>
+      </div>
+
     </div>
     <div class="block Metal">
       <a href="/search?genre=metal">
@@ -33,47 +45,74 @@
       </a>
     </div>
   </div>
+
   <div class="row">
     <div class="block Acoustic">
       <a href="/search?genre=acoustic">
         <h1>Acoustic</h1>
       </a>
     </div>
-    <div class="block Latin"><a href="/search?genre=latin">
-        <h1>Latin</h1>
-      </a>
+
+    <div class="block Latin">
+      <div class="black">
+        <a href="/search?genre=latin">
+          <h1>Latin</h1>
+        </a>
+      </div>
     </div>
-    <div class="block Punk"><a href="/search?genre=punk">
+    <div class="block Punk">
+      <a href="/search?genre=punk">
         <h1>Punk</h1>
       </a>
     </div>
   </div>
+
   <div class="row">
-    <div class="block Eighties"><a href="/search?genre=80s">
-        <h1>80s</h1>
-      </a>
+
+    <div class="block Eighties">
+      <div class="black">
+        <a href="/search?genre=80s">
+          <h1>80s</h1>
+        </a>
+      </div>
     </div>
-    <div class="block Hiphop"><a href="/search?genre=hiphop">
-        <h1>HipHop</h1>
-      </a>
+    <div class="block Hiphop">
+      <div class="black">
+        <a href="/search?genre=hiphop">
+          <h1>HipHop</h1>
+        </a>
+      </div>
     </div>
-    <div class="block Dub"><a href="/search?genre=raggae">
-        <h1>Dub and Reggae</h1>
-      </a>
+    <div class="block Dub">
+      <div class="black">
+        <a href="/search?genre=raggae">
+          <h1>Dub and Reggae</h1>
+        </a>
+      </div>
     </div>
   </div>
+
   <div class="row">
-    <div class="block Classical"><a href="/search?genre=classical">
+
+    <div class="block Classical">
+      <a href="/search?genre=classical">
         <h1>Classical</h1>
       </a>
     </div>
-    <div class="block Grunge"><a href="/search?genre=grunge">
-        <h1>Grunge</h1>
-      </a>
+    <div class="block Grunge">
+      <div class="black">
+        <a href="/search?genre=grunge">
+          <h1>Grunge</h1>
+        </a>
+      </div>
     </div>
-    <div class="block Folk"><a href="/search?genre=folk">
-        <h1>Folk</h1>
-      </a>
+    <div class="block Folk">
+      <div class="black">
+        <a href="/search?genre=folk">
+          <h1>Folk</h1>
+        </a>
+      </div>
+
     </div>
   </div>
 
