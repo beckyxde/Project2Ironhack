@@ -14,7 +14,7 @@ const user_Schema = new Schema({
     type: String,
     required: true
   },
-  starred_events: [{ type : mongoose.Schema.Types.ObjectId, ref: 'Event' }]
+  starred_events: [String]
 });
 
 const user = mongoose.model("user", user_Schema);

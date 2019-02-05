@@ -52,10 +52,15 @@ display: flex;
 }
 
 .filter button {
+  border: #000;
   background-color: #000;
   margin: auto !important;
   height: 30px;
   width: 30px;
+}
+
+input[name="favourite"] {
+  
 }
 
 .filter .navbar {

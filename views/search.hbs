@@ -25,7 +25,8 @@
 
   <div class="card mb-3">
     <div class="card-body">
-      <h5 class="card-title">{{this.name}}</h5>
+      <h5 class="card-title">{{this.name}}<span>
+          <button type="button" class="favourite" id={{ this.id }} onclick="likeThis(this)">⭐</button></span></h5>
       <p class="card-text">[ {{this.classifications.[0].genre.name}} ] <br>
         where: {{this._embedded.venues.[0].name}} <br>
         when: {{this.dates.start.localDate}}, {{this.dates.start.localTime}}</p>
@@ -37,8 +38,7 @@
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Berlin sleeps - we've found no {{this.classifications.[0].genre.name}} events</h5>
-      <p class="card-text">
-        <a href="/"><input type="submit" value="Get Me Home!"></a></p>
+      <p class="card-text"></p>
     </div>
   </div>
   {{/each}}

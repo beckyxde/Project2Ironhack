@@ -68,13 +68,13 @@ authRoutes.get("/logout", (req, res) => {
   res.redirect("/signup");
 });
 
-//profile page
-app.get("/profile", isLoggedIn, function(req, res) {
-  var user = req.user;
-  user._id = encrypt(user._id);
-  res.render("profile.hbs", {
-    user: user
-  });
-});
+// //profile page
+// app.get("/profile", isLoggedIn, function(req, res) {
+//   var user = req.user;
+//   user._id = encrypt(user._id);
+//   res.render("profile.hbs", {
+//     user: user
+//   });
+// });
 
 module.exports = authRoutes;
