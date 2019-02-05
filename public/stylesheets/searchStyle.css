@@ -2,8 +2,13 @@
   list-style-type: none;
 }
 
+h1 {
+  color: red;
+}
+
 body {
-  background-color: #ddd;
+  background-color: #000;
+  /* background-color: #ddd; */
 }
 
 a {
@@ -11,8 +16,8 @@ a {
   line-height: normal !important;
 }
 
-li:hover:not(.noResult):not(.nav) { 
-  background-color: rgba(113, 253, 100, 0.664); 
+.card-body:hover:not(.noResult):not(.nav) { 
+  background-color: rgba(255, 20, 40, 1); 
 }
 
 .flex-container {
@@ -21,7 +26,7 @@ flex-direction: column;
 padding: 30px;
 margin: 30px;
 list-style: none;
-border: 1px solid silver;
+/* border: 1px solid silver; */
 -ms-box-orient: horizontal;
 display: -webkit-box;
 display: -moz-box;
@@ -35,7 +40,7 @@ display: flex;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 0px 60px -30px 60px !important;
+  margin: 0px 60px 0px 60px !important;
   height: 60px !important;
   line-height: normal !important;
   justify-content: flex-end !important;
@@ -47,6 +52,7 @@ display: flex;
 }
 
 .filter button {
+  background-color: #000;
   margin: auto !important;
   height: 30px;
   width: 30px;
@@ -66,14 +72,13 @@ display: flex;
   -webkit-flex-wrap: nowrap;
   flex-wrap: wrap;
   background: #000;
-  border: 1px solid silver;
+  /* border: 1px solid silver; */
   padding: 5px;
   height: 100px;
   margin: 60px;
-  line-height: 50px;
-  color: white;
+  line-height: 30px;
+  /* color: white; */
   font-weight: bold;
-  text-align: center;
 }
 
 

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/stylesheets/searchStyle.css" />
 
 <header>
-  <h1 role="banner"><span class="o">easy</span>tune</h1>
+  <h1 role="banner">easytune</h1>
 </header>
 
 <div class="filter">
@@ -19,17 +19,27 @@
   </nav>
 </div>
 
-<ul id="resultsList" class="flex-box">
+<ul id="resultsList" class="container">
+
   {{#each events}}
-  <li>{{this.name}} :
-    {{this.classifications.[0].genre.name}}
-  </li>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{this.name}}</h5>
+      <p class="card-text">[ {{this.classifications.[0].genre.name}} ] <br>
+        where: {{this._embedded.venues.[0].name}} <br>
+        when: {{this.dates.start.localDate}}, {{this.dates.start.localTime}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  {{else}}
+
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Berlin sleeps - we've found no {{this.classifications.[0].genre.name}} events</h5>
+      <p class="card-text">
+        <a href="/"><input type="submit" value="Get Me Home!"></a></p>
+    </div>
+  </div>
   {{/each}}
 
-  <li class="noResult">Berlin sleeps - we've found no {{genre}} events
-    <br>
-    <a href="/"><input type="submit" value="Get Me Home!"></a>
-  </li>
-</ul>
-
-<script src="/javascripts/script.js"></script>
+  <script src="/javascripts/script.js"></script>
