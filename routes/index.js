@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const document = "";
 const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
+const User = require("../models/User");
 
 // /user
 router.get("/", (req, res, next) => {
@@ -44,6 +45,19 @@ router.get("/search", ensureLoggedIn("/signup"), (req, res, next) => {
       res.render("search", { events: responseFromAPI.data._embedded.events });
     })
 });
+
+router.post("/search", (req, res, next) => {
+  console.log("EVENT ID FROM FRONTENDDDDDD", req.body.eventId)
+  console.log("///wefauigelfhuawehalwa", req.user._id)
+  User.update({ _id: req.user._id },
+    { $addToSet: { starred_events: req.body.eventId } }).then(x => {
+      console.log("xxxxxxxxxxxxx", x)
+
+    })
+  res.send('up and running')
+})
+
+
 
 // index.js
 
