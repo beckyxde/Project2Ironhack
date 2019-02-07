@@ -1,3 +1,6 @@
+const mongoose = require("mongoose");
+mongoose();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   console.log('IronGenerator JS imported successfully!');
@@ -17,4 +20,6 @@ function likeThis($this) {
   axios.post('/search', { eventId: $this.id }).then(response => {
     console.log(response);
   });
-}
+};
+
+const databaseID = mongo.user.starred_events

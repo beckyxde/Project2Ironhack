@@ -19,7 +19,7 @@ const TicketmasterApi = require("ticketmaster");
 
 TicketmasterApi(process.env.clientId)
   .discovery.v2.event.all()
-  .then(function(result) {
+  .then(function (result) {
     console.log(result.items[0].classifications[0].genre.name);
 
     // "result" is an object of Ticketmaster events information
@@ -27,6 +27,7 @@ TicketmasterApi(process.env.clientId)
 
 //authorization
 const session = require("express-session");
+const MongoStore = require('connect-mongo')(session);
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -67,7 +68,8 @@ app.use(
   session({
     secret: "our-passport-local-strategy-app",
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
 

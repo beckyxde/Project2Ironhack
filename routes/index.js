@@ -21,8 +21,40 @@ router.get("/", (req, res, next) => {
 
 router.get("/profile", ensureLoggedIn("/signup"), (req, res, next) => {
   //req.user <-- current user
-  console.log("req useer PROFILE", req.user);
-  res.render("profile", { user: req.user });
+  let promisesArr = []
+  let secs = 0
+  req.user.starred_events.forEach((eventId) => {
+    let requestString =
+      "https://app.ticketmaster.com/discovery/v2/events/" +
+      eventId +
+      ".json?apikey=" +
+      process.env.clientId
+    let promise = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        console.log(
+          "resolving"
+        )
+        console.log(requestString)
+        resolve();
+      }, secs);
+      console.log(secs)
+    }).then(() => {
+      return axios.get(requestString)
+    })
+    promisesArr.push(promise)
+    secs += 2000
+  })
+
+  // wait for all requests to be answered
+  Promise.all(promisesArr).then((responses) => {
+    let events = []
+    responses.forEach((res) => {
+      //console.log(res);
+      events.push(res.data)
+    })
+    res.render("profile", { user: req.user, events: events });
+  })
+
 });
 
 router.get("/search", ensureLoggedIn("/signup"), (req, res, next) => {
@@ -54,6 +86,7 @@ router.post("/search", (req, res, next) => {
   });
   res.send("up and running");
 });
+
 
 // index.js
 

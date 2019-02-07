@@ -9,7 +9,7 @@
   </head>
 
   <header class="header">
-    <h1 role="banner"><span class="o"><a href="/">easytune</a></span></h1>
+    <h1 role="banner"><a href="/">easytune</a></h1>
     <ul class="nav">
       <li><a href="/">Back to Homepage</a></li>
       <li><a href="/signup">Logout</a></li>
@@ -19,6 +19,34 @@
   <div class="flex-box">
     <p>{{user.name}}'s Events</p>
   </div>
+
+  <ul id="resultsList" class="container">
+
+    {{#each events}}
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">
+          <p class="card-text">{{user.starred_events}}</p>{{this.name}}<span>
+            <button type="button" class="favourite" id={{ this.id }} onclick="likeThis(this)">⭐</button></span>
+        </h5>
+        <p class="card-text">[ {{this.classifications.[0].genre.name}} ] <br>
+          where: {{this._embedded.venues.[0].name}} <br>
+          when: {{this.dates.start.localDate}}, {{this.dates.start.localTime}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    {{else}}
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Berlin sleeps - we've found no
+          {{this.classifications.[0].genre.name}} events</h5>
+        <p class="card-text"></p>
+      </div>
+    </div>
+    {{/each}}
+  </ul>
 
   <div class="flex-container">
     <div class="card mb-3">

@@ -25,7 +25,7 @@ a {
   justify-content: center;
   flex-direction: column;
   padding: 30px;
-  margin: 30px;
+  margin: 0px 0px 30px 0px;
   list-style: none;
   /* border: 1px solid silver; */
   -ms-box-orient: horizontal;
@@ -48,6 +48,8 @@ a {
 }
 
 .flex-container a {
+  margin: 0px 20px;
+  color: #fff;
   font-size: 12px;
   text-transform: uppercase;
 }
