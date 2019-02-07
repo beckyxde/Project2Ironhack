@@ -8,19 +8,19 @@
   </p>
 
   <form action="/login" method="POST" id="form-container">
-    <div class="flex-box">
-      <label for="username">Username</label>
-      <input id="username2" type="text" name="username" placeholder="JonSnow">
+    <div class="flex-box" color="gray">
+      <label for="username">Username: </label>
+      <input id="username2" type="text" name="username" placeholder="JonSnow" style="height: 20px" font-size="10pt">
     </div>
     <br><br>
     <div class="flex-box">
-      <label for="password">Password</label>
-      <input id="password2" type="password" name="password" placeholder="Your password">
+      <label for="password">Password: </label>
+      <input id="password2" type="password" name="password" placeholder="Your password" style="height: 20px" font-size="10pt">
     </div>
     <br><br>
 
     <div class="flex-box">
-      <input type="submit" value="Login">
+      <a href="/">Login</a>
     </div>
 
     {{#if message}}
@@ -35,18 +35,18 @@
 
   <form action="/signup" method="POST" id="form-container2">
     <h2>Sign Up</h2>
-    <label for="name">Name</label>
-    <input id="name" type="text" name="name" placeholder="JonSnow">
+    <label for="name">Name: </label>
+    <input id="name" type="text" name="name" placeholder="JonSnow" style="height: 20px" font-size="10pt">
     <br><br>
-    <label for="username">Username</label>
-    <input id="username" type="text" name="username" placeholder="JonSnow">
+    <label for="username">Username: </label>
+    <input id="username" type="text" name="username" placeholder="JonSnow" style="height: 20px" font-size="10pt">
     <br><br>
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder="Your password">
+    <label for="password">Password: </label>
+    <input id="password" type="password" name="password" placeholder="Your password" style="height: 20px" font-size="10pt">
     <br><br>
 
-    <div>
-      <input type="submit" value="Signup">
+    <div class="flex-box">
+      <a href="/">Signup</a>
     </div>
 
     {{#if message}}

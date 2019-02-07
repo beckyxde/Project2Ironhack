@@ -1,9 +1,14 @@
 body {
-  background-color: #ddd;
+  margin: 0;
+  background: url(../images/bloodred.jpg);
+  background-size: 1440px 800px;
+  background-repeat: no-repeat;
+  display: compact;
 }
 
 .flex-container {
-  background: rgba(113, 253, 100, 0.664);
+  background: black;
+  color: red;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,8 +22,18 @@ body {
   padding: 10px;
 }
 
+.flex-box a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.flex-box a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
 .flex-container form {
-display: inline-flex;
+  display: inline-flex;
 }
 
 .flex-container2 {
@@ -33,7 +48,8 @@ display: inline-flex;
 }
 
 #form-container2 {
-  background: rgba(113, 253, 100, 0.664);
+  background: black;
   padding: 20px;
   box-shadow: 3px 3px 10px grey;
+  color: gray;
 }

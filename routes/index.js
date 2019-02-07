@@ -20,30 +20,26 @@ router.get("/", (req, res, next) => {
 
 router.get("/profile", ensureLoggedIn("/signup"), (req, res, next) => {
   //req.user <-- current user
-  console.log("req useer", req.user)
-  res.render("profile");
+  console.log("req useer", req.user);
+  res.render("profile", { user: req.user });
 });
 
 router.get("/search", ensureLoggedIn("/signup"), (req, res, next) => {
   //req.user <-- current user
   console.log("GENREEEE", req.query.genre);
-  let requestString = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" +
+  let requestString =
+    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" +
     process.env.clientId +
     "&keyword=" +
     req.query.genre +
-    " Berlin"
-  console.log(requestString)
-  axios
-    .get(
-      requestString
-    )
-    .then(responseFromAPI => {
-      responseFromAPI.data._embedded.events.map((event, i) => {
-        console.log(i, event)
-      }
-      );
-      res.render("search", { events: responseFromAPI.data._embedded.events });
-    })
+    " Berlin";
+  console.log(requestString);
+  axios.get(requestString).then(responseFromAPI => {
+    responseFromAPI.data._embedded.events.map((event, i) => {
+      console.log(i, event);
+    });
+    res.render("search", { events: responseFromAPI.data._embedded.events });
+  });
 });
 
 router.post("/search", (req, res, next) => {
