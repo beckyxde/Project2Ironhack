@@ -8,6 +8,7 @@ const User = require("../models/User");
 // /user
 router.get("/", (req, res, next) => {
   //req.user <-- current user
+  console.log("THIS IS THE USER", req.user);
   res.render("homepage");
 });
 
@@ -20,8 +21,8 @@ router.get("/", (req, res, next) => {
 
 router.get("/profile", ensureLoggedIn("/signup"), (req, res, next) => {
   //req.user <-- current user
-  console.log("req useer", req.user);
-  res.render("profile");
+  console.log("req useer PROFILE", req.user);
+  res.render("profile", { user: req.user });
 });
 
 router.get("/search", ensureLoggedIn("/signup"), (req, res, next) => {
@@ -43,7 +44,6 @@ router.get("/search", ensureLoggedIn("/signup"), (req, res, next) => {
 });
 
 router.post("/search", (req, res, next) => {
-<<<<<<< HEAD
   console.log("EVENT ID FROM FRONTENDDDDDD", req.body.eventId);
   console.log("///wefauigelfhuawehalwa", req.user._id);
   User.update(
@@ -54,19 +54,6 @@ router.post("/search", (req, res, next) => {
   });
   res.send("up and running");
 });
-=======
-  console.log("EVENT ID FROM FRONTENDDDDDD", req.body.eventId)
-  console.log("///wefauigelfhuawehalwa", req.user._id)
-  User.update({ _id: req.user._id },
-    { $addToSet: { starred_events: req.body.eventId } }).then(x => {
-      console.log("xxxxxxxxxxxxx", x)
-
-    })
-  res.send('up and running')
-})
-
-
->>>>>>> 7efea7b6414077020d5198c64a8f0ab4bb7b88ab
 
 // index.js
 
