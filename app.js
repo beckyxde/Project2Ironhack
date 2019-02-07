@@ -19,7 +19,7 @@ const TicketmasterApi = require("ticketmaster");
 
 TicketmasterApi(process.env.clientId)
   .discovery.v2.event.all()
-  .then(function (result) {
+  .then(function(result) {
     console.log(result.items[0].classifications[0].genre.name);
 
     // "result" is an object of Ticketmaster events information
@@ -111,7 +111,7 @@ app.use((req, res, next) => {
   //res.locals.isAdmin = req.user && req.user.role === 'ADMIN'
 
   next();
-})
+});
 
 // Middleware Setup
 app.use(logger("dev"));
@@ -133,5 +133,7 @@ const index = require("./routes/index");
 app.use("/", index);
 const auth = require("./routes/auth");
 app.use("/", auth);
+// const profile = require("./routes/profile");
+// app.use("/", profile);
 
 module.exports = app;

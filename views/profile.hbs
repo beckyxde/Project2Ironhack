@@ -17,11 +17,15 @@
   </header>
 
   <div class="flex-box">
-    <p>User's Profile</p>
+    <p>{{user.name}}'s Events</p>
   </div>
 
   <div class="flex-container">
-    {{!-- <p>Starred Events</p> --}}
+    <div class="card mb-3">
+      <div class="card-body">
+        <p class="card-text">{{user.starred_events}}</p>
+      </div>
+    </div>
   </div>
 
   </html>
