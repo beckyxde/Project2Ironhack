@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function likeThis($this) {
   console.log('button clicked');
-  console.log('thissssss', $this);
+  console.log('thissssss', $this.id);
   // const selfie_data = $this.id;
-  // $this.style.display = 'none';
+  $this.style.display = 'none';
   // console.log('data: ' + selfie_data);
   // // console.log('user: ' + user_data);
-  // axios.post('/like/new', { selfie_data: selfie_data }).then(response => {
-  //   console.log(response);
-  // });
+  axios.post('/search', { eventId: $this.id }).then(response => {
+    console.log(response);
+  });
 }

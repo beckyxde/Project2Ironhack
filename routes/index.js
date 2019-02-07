@@ -43,6 +43,7 @@ router.get("/search", ensureLoggedIn("/signup"), (req, res, next) => {
 });
 
 router.post("/search", (req, res, next) => {
+<<<<<<< HEAD
   console.log("EVENT ID FROM FRONTENDDDDDD", req.body.eventId);
   console.log("///wefauigelfhuawehalwa", req.user._id);
   User.update(
@@ -53,6 +54,19 @@ router.post("/search", (req, res, next) => {
   });
   res.send("up and running");
 });
+=======
+  console.log("EVENT ID FROM FRONTENDDDDDD", req.body.eventId)
+  console.log("///wefauigelfhuawehalwa", req.user._id)
+  User.update({ _id: req.user._id },
+    { $addToSet: { starred_events: req.body.eventId } }).then(x => {
+      console.log("xxxxxxxxxxxxx", x)
+
+    })
+  res.send('up and running')
+})
+
+
+>>>>>>> 7efea7b6414077020d5198c64a8f0ab4bb7b88ab
 
 // index.js
 
