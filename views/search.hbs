@@ -1,8 +1,24 @@
 <link rel="stylesheet" href="/stylesheets/searchStyle.css" />
 
-<header>
-  <h1 role="banner">easytune</a></h1>
-</header>
+<div id="navBar" class="flex-container">
+
+  <h1 class="flex-box">easytune</h1>
+
+
+  <form action="/login" method="POST" id="form-container">
+    <div class="flex-box">
+      <a href="/profile">Profile</a>
+      <a href="/logout">Logout</a>
+    </div>
+
+
+    {{#if message}}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+    <br><br>
+
+  </form>
+</div>
 
 <div class="filter">
   <input type="text" placeholder="filter results"></input>

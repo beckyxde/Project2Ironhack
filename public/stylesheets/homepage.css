@@ -14,9 +14,31 @@ Flexbox Layout
   flex-direction: column;
 }
 
-.o {
+.flex-container {
+  background: black;
   color: red;
-  margin: 12px 0 12px 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  box-shadow: 3px 3px 10px grey;
+  font-size: 12px;
+}
+
+.flex-container a {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.flex-container a:hover {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.flex-box {
+  margin: 0px 20px;
 }
 
 .header {

@@ -20,6 +20,7 @@ a {
   background-color: rgba(255, 20, 40, 1);
 }
 
+
 .flex-container {
   justify-content: center;
   flex-direction: column;
@@ -34,6 +35,32 @@ a {
   display: -moz-flex;
   display: -webkit-flex;
   display: flex;
+
+
+  background: black;
+  color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  box-shadow: 3px 3px 10px grey;
+  font-size: 12px;
+}
+
+.flex-container a {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.flex-container a:hover {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.flex-box {
+  margin: 0px 20px;
 }
 
 .filter {
