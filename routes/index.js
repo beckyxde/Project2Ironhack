@@ -42,7 +42,7 @@ router.get("/profile", ensureLoggedIn("/signup"), (req, res, next) => {
       return axios.get(requestString)
     })
     promisesArr.push(promise)
-    secs += 2000
+    secs += 500
   })
 
   // wait for all requests to be answered
