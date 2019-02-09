@@ -70,7 +70,7 @@ router.get("/search", ensureLoggedIn("/signup"), (req, res, next) => {
   axios.get(requestString).then(responseFromAPI => {
     responseFromAPI.data._embedded.events.map((event, i) => {
       console.log(i, event);
-    });
+    })
     res.render("search", { events: responseFromAPI.data._embedded.events });
   });
 });
@@ -122,29 +122,5 @@ function checkInput() {
     document.getElementById("theButton").disabled = false;
   }
 }
-
-// document.getElementById("theButton").onclick = function() {
-//   removeErrDiv();
-//   const events = document.getElementById("theInput").value;
-//   getEventInfo(events);
-// };
-// const eventGenre = responseFromAPI.events.classifications.genre.name[0];
-// const eventName = responseFromAPI.events.name[0];
-
-//   // instead in the console, show data in the browser using JS DOM manipulation:
-//   document.getElementById("resultsList").innerHTML = countryName;
-//   document.getElementById("countryCapital").innerHTML = "Capital: " + countryCapital;
-// // })
-// .catch (err => {
-//     if (err.response.status === 404) {
-//       removeCountryInfo();
-//       createDiv();
-//       const theErr = document.createTextNode(`What the heck is ${theName}? 🤭`);
-//       errDiv.appendChild(theErr);
-//     } else {
-//       console.log('err => ', err)
-//     }
-//       //   })
-//     }
 
 module.exports = router;

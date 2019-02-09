@@ -24,7 +24,7 @@ a {
 .flex-container {
   justify-content: center;
   flex-direction: column;
-  padding: 30px;
+  padding: 5px 15px;
   margin: 0px 0px 30px 0px;
   list-style: none;
   /* border: 1px solid silver; */
@@ -86,9 +86,6 @@ a {
   margin: auto !important;
   height: 30px;
   width: 30px;
-}
-
-input[name="favourite"] {
 }
 
 .filter .navbar {
